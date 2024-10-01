@@ -67,7 +67,7 @@ function checker(first, second, third) {
 }
 
 //
-function changeBackgroundColor(first, second, third) {
+function winner(first, second, third) {
     squares[first].style.backgroundColor = "#198754";
     squares[second].style.backgroundColor = '#198754';
     squares[third].style.backgroundColor = '#198754';
@@ -89,7 +89,7 @@ function endTheGame(message)
 }
 
 //
-function squaresAreNotEmtpty() {
+function noWinner() {
     let empty = 0;
 
     for (let i = 1; i < squares.length; i++) {
@@ -106,22 +106,22 @@ function squaresAreNotEmtpty() {
 //
 function checkForWinner()
 {
-    if (checker(1, 2, 3)) { changeBackgroundColor(1, 2, 3); endTheGame("Winner"); }
+    if (checker(1, 2, 3)) { winner(1, 2, 3); endTheGame("Winner"); }
 
-    if (checker(4, 5, 6)) { changeBackgroundColor(4, 5, 6); endTheGame("Winner"); }
+    else if (checker(4, 5, 6)) { winner(4, 5, 6); endTheGame("Winner"); }
 
-    if (checker(7, 8, 9)) { changeBackgroundColor(7, 8, 9); endTheGame("Winner"); }
+    else if (checker(7, 8, 9)) { winner(7, 8, 9); endTheGame("Winner"); }
 
-    if (checker(1, 4, 7)) { changeBackgroundColor(1, 4, 7); endTheGame("Winner"); }
+    else if (checker(1, 4, 7)) { winner(1, 4, 7); endTheGame("Winner"); }
 
-    if (checker(2, 5, 8)) { changeBackgroundColor(2, 5, 8); endTheGame("Winner"); }
+    else if (checker(2, 5, 8)) { winner(2, 5, 8); endTheGame("Winner"); }
 
-    if (checker(3, 6, 9)) { changeBackgroundColor(3, 6, 9); endTheGame("Winner"); }
+    else if (checker(3, 6, 9)) { winner(3, 6, 9); endTheGame("Winner"); }
 
-    if (checker(1, 5, 9)) { changeBackgroundColor(1, 5, 9); endTheGame("Winner"); }
+    else if (checker(1, 5, 9)) { winner(1, 5, 9); endTheGame("Winner"); }
 
-    if (checker(3, 5, 7)) { changeBackgroundColor(3, 5, 7); endTheGame("Winner"); }
+    else if (checker(3, 5, 7)) { winner(3, 5, 7); endTheGame("Winner"); }
     
-    if (squaresAreNotEmtpty()) { endTheGame("No Winner"); }
+    else if (noWinner()) { endTheGame("No Winner"); }
 }
 
